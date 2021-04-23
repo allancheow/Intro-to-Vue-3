@@ -5,15 +5,64 @@
     <title>Vue Mastery</title>
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <!-- Import Vue.js 23April21: Updated CDN link -->
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <div class="nav-bar"></div>
+
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- image goes here -->
+            <!-- #3 challenge: href -->
+            <a :href="socksURL" target="_blank"
+              ><img :src="image" alt="Image of colored socks"
+            /></a>
+          </div>
+          <div class="product-info">
+            <h1>{{product}}</h1>
+            <!-- #2 challenge: description -->
+            <p>{{description}}</p>
+
+            <!-- basic if logic -->
+            <!-- <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p> -->
+
+            <!-- display none logic -->
+            <!-- <p v-show="inStock">In Stock</p> -->
+
+            <!-- conditional logic -->
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+            <p v-else>Out of Stock</p>
+
+            <!-- #4 challenge: boolean -->
+            <p v-if="onSale">On Sale</p>
+
+            <!-- for loop iteration in list -->
+            <ul>
+              <li v-for="detail in details">{{detail}}</li>
+            </ul>
+            <!-- binding key for unique usage -->
+            <!-- <div v-for="variant in variants" :key="variant.id">
+              {{variant.color}}
+            </div> -->
+            <!-- #5 challenge -->
+            <ul>
+              <li v-for="size in sizes">{{size}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Import Js -->
+    <!-- Import App -->
     <script src="./main.js"></script>
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app');
+    </script>
   </body>
 </html>
