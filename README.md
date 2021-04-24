@@ -6,7 +6,7 @@ Code for Vue Mastery's Intro to Vue 3 course:
 
 # Overview
 
-Introductory lessons into Vue3
+Step by step introductory lessons into Vue3. Building out a basic single item e-commerce site with review capabilities
 <br>
 
 # Credit
@@ -18,7 +18,7 @@ Files provided by @Code-Pop
 - main.js
   <br>
 
-File build by me (@allancheow)
+File build by me (@allancheow) - N/A
 <br>
 
 # Demo
